@@ -1,0 +1,15 @@
+<ion-view view-title="Feed">
+    <ion-content class="padding">
+        <div ng-show="lastImages.length > 0" class="list">
+            <a ng-repeat="lastImage in lastImages" ng-click="go('gallery/image/{{lastImage._id}}')"
+               class="item item-thumbnail-left" href="#">
+                <img ng-src="{{baseServiceUrl}}/gallery/image/view/{{lastImage.file}}">
+
+                <h2>{{lastImage.title}}</h2>
+
+                <p>{{lastImage.created}}</p>
+            </a>
+        </div>
+        <div ng-hide="lastImages.length">No shared images. Go to your gallery to upload</div>
+    </ion-content>
+</ion-view>

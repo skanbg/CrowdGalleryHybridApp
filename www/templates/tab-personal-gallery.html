@@ -1,0 +1,31 @@
+<ion-view view-title="Personal Gallery">
+    <ion-content class="padding">
+        <div class="card">
+            <div class="item item-text-wrap">
+                {{ message }}
+            </div>
+        </div>
+        <!--<img ng-src="{{img}}" alt=""/>-->
+        <img ng-src="{{imageURI}}" alt=""/>
+        <!--<img src="http://localhost:3000/gallery/image/554f086b55a4cf840f427f94" alt=""/>-->
+        <button ng-click="upload()" class="button button-block button-primary">Take a Photo</button>
+        <!--lastImages-->
+        <div ng-show="lastImages.length > 0" class="list">
+            <a ng-repeat="lastImage in lastImages" ng-click="go('gallery/image/{{lastImage._id}}')"
+               class="item item-thumbnail-left" href="#">
+                <img ng-src="{{baseServiceUrl}}/gallery/image/view/{{lastImage.file}}">
+
+                <h2>{{lastImage.title}}</h2>
+
+                <p>{{lastImage.created}}</p>
+            </a>
+        </div>
+        <div ng-hide="lastImages.length">No shared images. Upload now :)</div>
+        <!--<div ng-show="lastImages.length > 0" class="card">-->
+        <!--<div ng-repeat="lastImage in lastImages" class="item item-text-wrap item-icon-left">-->
+        <!--<i class="icon ion-key"></i>-->
+        <!--{{ error }}-->
+        <!--</div>-->
+        <!--</div>-->
+    </ion-content>
+</ion-view>

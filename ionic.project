@@ -1,0 +1,16 @@
+{
+  "name": "CrowdGalleryHybridApp",
+  "app_id": "",
+  "xwalk_hosts": [
+      "http://*/",
+      "https://*/"
+    ],
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

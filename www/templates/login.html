@@ -1,0 +1,26 @@
+<ion-view view-title="Login" name="login-view">
+    <ion-content class="padding">
+        <div ng-show="errors.length > 0" class="card">
+            <div ng-repeat="error in errors" class="item item-text-wrap item-icon-left">
+                <i class="icon ion-key"></i>
+                {{ error }}
+            </div>
+        </div>
+        <!--<div ng-show="errors.length > 0" class="list card">-->
+        <!--<div ng-repeat="error in errors" class="item item-icon-left">-->
+        <!--<i class="icon ion-key"></i>-->
+        <!--{{ error }}-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="email" placeholder="Email" ng-model="data.email">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model="data.password">
+            </label>
+        </div>
+        <button class="button button-block button-calm" ng-click="login()">Login</button>
+        <button class="button button-block button-calm" ng-click="go('/register')">Go to Register</button>
+    </ion-content>
+</ion-view>
